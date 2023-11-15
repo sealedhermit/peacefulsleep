@@ -50,11 +50,11 @@ const Pane = ({ title }) => {
   };
 
   const handleSliderTouchStart = (event) => {
-    event.preventDefault(); // Prevent the default touch behavior
+    event.preventDefault();
   };
 
   const handleSliderTouchMove = (event) => {
-    event.preventDefault(); // Prevent the default touch behavior
+    event.preventDefault();
   };
 
   const paneStyle = {
@@ -88,7 +88,7 @@ const Pane = ({ title }) => {
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     padding: '20px',
-    width: 'calc(100vw - 40px)', // Adjust the width to fit the entire content without scrolling
+    width: 'calc(100vw - 40px)',
   };
 
   const tileStyle = {
@@ -122,6 +122,16 @@ const Pane = ({ title }) => {
     Urban: ['traffic', 'people', 'wind', 'rain', 'police'],
   };
 
+  const bannerStyle = {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    textAlign: 'center',
+    padding: '10px',
+    fontSize: '14px',
+  };
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <div style={paneStyle}>
@@ -142,13 +152,16 @@ const Pane = ({ title }) => {
                 step="0.1"
                 value={volume[sound] || 0.5}
                 style={volumeSliderStyle}
-                onTouchStart={handleSliderTouchStart} // Prevent default touchstart behavior
-                onTouchMove={handleSliderTouchMove} // Prevent default touchmove behavior
+                onTouchStart={handleSliderTouchStart}
+                onTouchMove={handleSliderTouchMove}
                 onChange={(event) => handleVolumeChange(event, sound)}
               />
             </div>
           ))}
         </div>
+      </div>
+      <div style={bannerStyle}>
+        Feedback @bananafry_ on Twitter
       </div>
     </div>
   );
