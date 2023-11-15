@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  position: relative;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  width: 100vw;
+  height: 100vh;
+  white-space: nowrap; /* Ensure all panes are in a single line */
+}
+
+.Pane {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Page Indicator */
+.page-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page-indicator span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #aaa;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.page-indicator span.active {
+  background-color: #333;
+}
+
+/* Navigation Buttons */
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:first-child {
+  left: 10px;
+}
+
+button:last-child {
+  right: 10px;
+}
