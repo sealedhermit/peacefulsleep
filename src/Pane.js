@@ -76,15 +76,17 @@ const Pane = ({ title }) => {
 
   const tileContainerStyle = {
     display: 'flex',
+    justifyContent: 'center', // Center tiles horizontally
     flexWrap: 'wrap',
+    padding: '20px', // Add padding to the container
   };
 
   const tileStyle = {
     width: '100px',
     height: '100px',
     borderRadius: '50%',
-    backgroundColor: 'lightgray',
-    margin: '10px',
+    backgroundColor: 'rgba(211, 211, 211, 0.5)', // Adjust the alpha value (0.5 for 50% transparency)
+    margin: '10px', // Adjust margin for spacing between tiles
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

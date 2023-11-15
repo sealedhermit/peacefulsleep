@@ -68,3 +68,12 @@ button:first-child {
 button:last-child {
   right: 10px;
 }
+
+/* Add this style to the container of your panes */
+.App {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Change the scrolling behavior to snap */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
+}
+
