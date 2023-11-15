@@ -51,7 +51,7 @@ const Pane = ({ title }) => {
 
   const paneStyle = {
     width: '100vw',
-    height: '100vh', // Set a fixed height for all panes
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -80,6 +80,7 @@ const Pane = ({ title }) => {
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     padding: '20px',
+    width: 'calc(100vw - 40px)', // Adjust the width to fit the entire content without scrolling
   };
 
   const tileStyle = {
