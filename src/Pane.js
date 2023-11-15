@@ -50,12 +50,12 @@ const Pane = ({ title }) => {
   };
 
   const paneStyle = {
-    width: '90vw',
+    width: '100vw',
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     scrollSnapAlign: 'start',
     flexShrink: 0,
     padding: '20px',
@@ -67,14 +67,20 @@ const Pane = ({ title }) => {
     textAlign: 'center',
   };
 
+  const titleStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    margin: 0,
+    marginBottom: '10px',
+  };
+
   const tileContainerStyle = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexWrap: 'wrap',
     padding: '20px',
-    width: '100%', 
-    height: '90%',
+    width: 'calc(100vw - 40px)', // Adjust the width to fit the entire content without scrolling
   };
 
   const tileStyle = {
@@ -97,14 +103,12 @@ const Pane = ({ title }) => {
 
   const volumeSliderStyle = {
     width: '80%',
-    marginTop: '5px',
-    marginBottom: '10px',
+    marginTop: '10px',
     appearance: 'none',
     background: 'linear-gradient(to right, #ddd, #ddd)',
     height: '5px',
     borderRadius: '5px',
     outline: 'none',
-    pointerEvents: 'none', // Disable pointer events on the volume slider
   };
   
   const volumeSliderThumb = {
@@ -114,7 +118,6 @@ const Pane = ({ title }) => {
     backgroundColor: '#555',
     cursor: 'pointer',
     boxShadow: '0 0 5px rgba(0,0,0,0.3)',
-    pointerEvents: 'auto', // Enable pointer events on the slider thumb
   };
 
   const tiles = {
@@ -128,7 +131,7 @@ const Pane = ({ title }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <div style={paneStyle}>
-        <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0, marginBottom: '10px' }}>{title}</h2>
+        <h2 style={titleStyle}>{title}</h2>
         <div style={tileContainerStyle}>
           {tiles[title].map((sound, index) => (
             <div key={index}>
