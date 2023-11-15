@@ -51,7 +51,7 @@ const Pane = ({ title }) => {
 
   const paneStyle = {
     width: '90vw',
-    height: '90vh',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
