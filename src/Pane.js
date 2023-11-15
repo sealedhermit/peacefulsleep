@@ -49,6 +49,14 @@ const Pane = ({ title }) => {
     }
   };
 
+  const handleSliderTouchStart = (event) => {
+    event.preventDefault(); // Prevent the default touch behavior
+  };
+
+  const handleSliderTouchMove = (event) => {
+    event.preventDefault(); // Prevent the default touch behavior
+  };
+
   const paneStyle = {
     width: '100vw',
     height: '100vh',
@@ -104,20 +112,6 @@ const Pane = ({ title }) => {
   const volumeSliderStyle = {
     width: '80%',
     marginTop: '10px',
-    appearance: 'none',
-    background: 'linear-gradient(to right, #ddd, #ddd)',
-    height: '5px',
-    borderRadius: '5px',
-    outline: 'none',
-  };
-  
-  const volumeSliderThumb = {
-    width: '15px',
-    height: '15px',
-    borderRadius: '50%',
-    backgroundColor: '#555',
-    cursor: 'pointer',
-    boxShadow: '0 0 5px rgba(0,0,0,0.3)',
   };
 
   const tiles = {
@@ -148,6 +142,8 @@ const Pane = ({ title }) => {
                 step="0.1"
                 value={volume[sound] || 0.5}
                 style={volumeSliderStyle}
+                onTouchStart={handleSliderTouchStart} // Prevent default touchstart behavior
+                onTouchMove={handleSliderTouchMove} // Prevent default touchmove behavior
                 onChange={(event) => handleVolumeChange(event, sound)}
               />
             </div>
