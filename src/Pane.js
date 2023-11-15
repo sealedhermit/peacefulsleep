@@ -74,7 +74,7 @@ const Pane = ({ title }) => {
     flexWrap: 'wrap',
     padding: '20px',
     width: '100%', 
-    height: '100%',
+    height: '90%',
   };
 
   const tileStyle = {
