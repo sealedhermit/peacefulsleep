@@ -114,7 +114,7 @@ const Pane = ({ title }) => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div style={{ scrollSnapType: 'x mandatory', overflowX: 'scroll' }}>
       <div style={paneStyle}>
         <h2 style={titleStyle}>{title}</h2>
         <div style={tileContainerStyle}>
