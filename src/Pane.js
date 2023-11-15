@@ -4,15 +4,15 @@ const Pane = ({ title }) => {
   const getBackgroundImage = (title) => {
     switch (title) {
       case 'Forest':
-        return 'url(/images/forest.jpg)'; // Replace with your image path for Forest
+        return 'url(/images/forest.jpg)';
       case 'Beach':
-        return 'url(/images/beach.jpg)'; // Replace with your image path for Beach
+        return 'url(/images/beach.jpg)';
       case 'Countryside':
-        return 'url(/images/countryside.jpg)'; // Replace with your image path for Countryside
+        return 'url(/images/countryside.jpg)';
       case 'Park':
-        return 'url(/images/park.jpg)'; // Replace with your image path for Park
+        return 'url(/images/park.jpg)';
       case 'Urban':
-        return 'url(/images/urban.jpg)'; // Replace with your image path for Urban
+        return 'url(/images/urban.jpg)';
       default:
         return 'none';
     }
@@ -58,35 +58,36 @@ const Pane = ({ title }) => {
     alignItems: 'flex-start',
     scrollSnapAlign: 'start',
     flexShrink: 0,
-    padding: '20px', // Adjust padding as needed
-    backgroundImage: getBackgroundImage(title), // Set background image dynamically
+    padding: '20px',
+    backgroundImage: getBackgroundImage(title),
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    color: 'white', // Text color for better visibility on background
-    textAlign: 'center', // Center align text
+    color: 'white',
+    textAlign: 'center',
   };
 
   const titleStyle = {
     fontSize: '24px',
     fontWeight: 'bold',
     margin: 0,
-    marginBottom: '10px', // Adjust margin as needed
+    marginBottom: '10px',
   };
 
   const tileContainerStyle = {
     display: 'flex',
-    justifyContent: 'center', // Center tiles horizontally
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     flexWrap: 'wrap',
-    padding: '20px', // Add padding to the container
+    padding: '20px',
   };
 
   const tileStyle = {
     width: '100px',
     height: '100px',
     borderRadius: '50%',
-    backgroundColor: 'rgba(211, 211, 211, 0.5)', // Adjust the alpha value (0.5 for 50% transparency)
-    margin: '10px', // Adjust margin for spacing between tiles
+    backgroundColor: 'rgba(211, 211, 211, 0.5)',
+    margin: '10px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -113,28 +114,30 @@ const Pane = ({ title }) => {
   };
 
   return (
-    <div style={paneStyle}>
-      <h2 style={titleStyle}>{title}</h2>
-      <div style={tileContainerStyle}>
-        {tiles[title].map((sound, index) => (
-          <div key={index}>
-            <div
-              style={{ ...tileStyle, ...(activeSounds[sound] ? activeTileStyle : {}) }}
-              onClick={() => playSound(sound)}
-            >
-              {sound}
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={paneStyle}>
+        <h2 style={titleStyle}>{title}</h2>
+        <div style={tileContainerStyle}>
+          {tiles[title].map((sound, index) => (
+            <div key={index}>
+              <div
+                style={{ ...tileStyle, ...(activeSounds[sound] ? activeTileStyle : {}) }}
+                onClick={() => playSound(sound)}
+              >
+                {sound}
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+                value={volume[sound] || 0.5}
+                style={volumeSliderStyle}
+                onChange={(event) => handleVolumeChange(event, sound)}
+              />
             </div>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.1"
-              value={volume[sound] || 0.5}
-              style={volumeSliderStyle}
-              onChange={(event) => handleVolumeChange(event, sound)}
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
