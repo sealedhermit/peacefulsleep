@@ -55,7 +55,7 @@ const Pane = ({ title }) => {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     scrollSnapAlign: 'start',
     flexShrink: 0,
     padding: '20px',
@@ -67,20 +67,14 @@ const Pane = ({ title }) => {
     textAlign: 'center',
   };
 
-  const titleStyle = {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    margin: 0,
-    marginBottom: '10px',
-  };
-
   const tileContainerStyle = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     flexWrap: 'wrap',
     padding: '20px',
-    width: 'calc(100vw - 40px)', // Adjust the width to fit the entire content without scrolling
+    width: '100%', // Set the width to fill the entire pane
+    height: '100%', // Set the height to fill the entire pane
   };
 
   const tileStyle = {
@@ -117,7 +111,7 @@ const Pane = ({ title }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <div style={paneStyle}>
-        <h2 style={titleStyle}>{title}</h2>
+        <h2 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0, marginBottom: '10px' }}>{title}</h2>
         <div style={tileContainerStyle}>
           {tiles[title].map((sound, index) => (
             <div key={index}>
