@@ -73,8 +73,8 @@ const Pane = ({ title }) => {
     alignItems: 'center',
     flexWrap: 'wrap',
     padding: '20px',
-    width: '100%', // Set the width to fill the entire pane
-    height: '100%', // Set the height to fill the entire pane
+    width: '100%', 
+    height: '100%',
   };
 
   const tileStyle = {
@@ -97,7 +97,24 @@ const Pane = ({ title }) => {
 
   const volumeSliderStyle = {
     width: '80%',
-    marginTop: '10px',
+    marginTop: '5px',
+    marginBottom: '10px',
+    appearance: 'none',
+    background: 'linear-gradient(to right, #ddd, #ddd)',
+    height: '5px',
+    borderRadius: '5px',
+    outline: 'none',
+    pointerEvents: 'none', // Disable pointer events on the volume slider
+  };
+  
+  const volumeSliderThumb = {
+    width: '15px',
+    height: '15px',
+    borderRadius: '50%',
+    backgroundColor: '#555',
+    cursor: 'pointer',
+    boxShadow: '0 0 5px rgba(0,0,0,0.3)',
+    pointerEvents: 'auto', // Enable pointer events on the slider thumb
   };
 
   const tiles = {
