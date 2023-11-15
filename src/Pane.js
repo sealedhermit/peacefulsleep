@@ -51,7 +51,7 @@ const Pane = ({ title }) => {
 
   const paneStyle = {
     width: '100vw',
-    height: '100vh',
+    height: '100vh', // Set a fixed height for all panes
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
