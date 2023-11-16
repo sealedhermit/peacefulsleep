@@ -122,16 +122,6 @@ const Pane = ({ title }) => {
     Urban: ['traffic', 'people', 'wind', 'rain', 'police'],
   };
 
-  const bannerStyle = {
-    position: 'fixed',
-    bottom: 0,
-    width: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    textAlign: 'center',
-    padding: '10px',
-    fontSize: '14px',
-  };
-
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <div style={paneStyle}>
@@ -159,9 +149,6 @@ const Pane = ({ title }) => {
             </div>
           ))}
         </div>
-      </div>
-      <div style={bannerStyle}>
-        Feedback @bananafry_ on Twitter
       </div>
     </div>
   );
